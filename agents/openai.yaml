@@ -1,0 +1,6 @@
+interface:
+  display_name: "Assessment Skill"
+  short_description: "Plan, evidence, draft, and review assessments"
+  default_prompt: "Use $assessment-skill to complete this assessment from the brief, rubric, template, and evidence."
+policy:
+  allow_implicit_invocation: true
