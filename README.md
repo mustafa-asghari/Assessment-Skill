@@ -23,9 +23,15 @@ The skill includes:
 - `references/humanizer/research-ledger.md` - dated source-backed pattern updates.
 - `agents/openai.yaml` - Codex UI metadata.
 
-## Publishing on GitHub
+## Repository
 
-This repository is meant to be published with `SKILL.md` at the repo root. After you push it to GitHub, users can install the skill from the repo or clone it into their local skills folder.
+This skill is distributed from:
+
+```text
+git@github.com:mustafa-asghari/Assessment-Skill.git
+```
+
+The repository is meant to be used with `SKILL.md` at the repo root. Users can install the skill from GitHub or clone it into their local skills folder.
 
 Recommended repo layout:
 
@@ -53,19 +59,13 @@ name: assessment-skill
 If the user has Codex's skill installer available, they can ask their agent:
 
 ```text
-Install the Codex skill from https://github.com/YOUR-USERNAME/YOUR-REPO
+Install the Codex skill from GitHub repo mustafa-asghari/Assessment-Skill at path .
 ```
 
-If the installer needs an explicit path, use the repo root:
+If their agent accepts an SSH Git URL, they can use:
 
 ```text
-Install the Codex skill from https://github.com/YOUR-USERNAME/YOUR-REPO/tree/main
-```
-
-or:
-
-```text
-Install the skill from GitHub repo YOUR-USERNAME/YOUR-REPO at path .
+Install the Codex skill from git@github.com:mustafa-asghari/Assessment-Skill.git
 ```
 
 After installation, restart Codex so it picks up the new skill.
@@ -76,7 +76,7 @@ Users can also clone the repo directly into their skills folder:
 
 ```bash
 mkdir -p ~/.codex/skills
-git clone https://github.com/YOUR-USERNAME/YOUR-REPO.git ~/.codex/skills/assessment-skill
+git clone git@github.com:mustafa-asghari/Assessment-Skill.git ~/.codex/skills/assessment-skill
 ```
 
 Then restart Codex and invoke:
@@ -99,14 +99,6 @@ After installation, start a new agent chat and write:
 Use $assessment-skill to complete this assessment.
 
 First read the assessment brief, rubric, templates, and attached files. Set /goal if supported. Ask me all required questions up front, including tone, missing details, and evidence permissions. Then split the work into chunks, use subagents where useful, run evaluator checks, run strict teacher review, and produce the final submission.
-```
-
-### Option 2: Use it directly by path
-
-During development, you can reference the local path directly:
-
-```text
-Use the assessment skill at /Users/mustafaasghari/code/Skill/Assessment_Skill to complete this assessment.
 ```
 
 ## What the agent should ask first
